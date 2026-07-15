@@ -8,7 +8,7 @@ function App() {
 
   useEffect(() => {
     // Fetch data from Flask backend
-    fetch('http://127.0.0.1:5000/api/resume')
+    fetch('/api/resume')
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       {error ? (
-        <div className="error">{error}</div>
+        <div className="error-message">{error}</div>
       ) : (
         <Resume data={resumeData} />
       )}
